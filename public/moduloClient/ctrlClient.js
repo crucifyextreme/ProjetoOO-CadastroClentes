@@ -8,6 +8,7 @@ appClient
 
                     modelClient.consulta_dados()
                         .success(function(data) {
+
                             $scope.clientes = data;
                         })
 
@@ -17,7 +18,7 @@ appClient
                     modelClient.consulta_dados()
                         .success(function(data) {
 
-                            for(var i=0; i<data.length; i++) {
+                            for(var i=0; i < Object.keys(data).length; i++) {
                                 if(data[i].id == id_cliente) {
                                     $scope.nome_cliente = data[i].nome;
                                     $scope.cpf = data[i].cpf;
