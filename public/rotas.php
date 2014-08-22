@@ -200,6 +200,7 @@ if( $rotaFinal == "/clientes") {
         'cpf'           => $clienteJuridica4->getCnpj(),
         'endereco'      => $clienteJuridica4->getEndereco(),
         'cidade'        => $clienteJuridica4->getCidade(),
+        'tipo_cliente'  => $clienteJuridica4->getTipoCliente(),
         'classificacao' => $clienteJuridica4->getClassificacao()
     );
     $cliente [9]= array(
