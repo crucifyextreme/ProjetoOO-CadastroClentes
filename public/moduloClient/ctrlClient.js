@@ -8,15 +8,20 @@ appClient
 
                     modelClient.consulta_dados()
                         .success(function(data) {
-
+                            //console.log(data);
                             $scope.clientes = data;
                         })
+                        .error(function() {
+                           /////
+                        });
 
                 },
                 /* Open modal details clients */
                 $scope.detailClients = function(id_cliente) {
                     modelClient.consulta_dados()
+
                         .success(function(data) {
+
 
                             for(var i=0; i < Object.keys(data).length; i++) {
                                 if(data[i].id == id_cliente) {
@@ -24,6 +29,8 @@ appClient
                                     $scope.cpf = data[i].cpf;
                                     $scope.endereco = data[i].endereco;
                                     $scope.cidade = data[i].cidade;
+                                    $scope.endereco_cob = data[i].endereco_cob;
+                                    $scope.cidade_cob = data[i].cidade_cob;
                                 }
                             }
                             /* Open modal details */

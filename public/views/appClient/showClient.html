@@ -22,7 +22,9 @@
             <th><a href="" ng-click="predicate = 'nome'; reverse=false">Nome</a>
                 (<a href="" ng-click="predicate = '-nome'; reverse=false">^</a>)
             </th>
-            <th>CPF</th>
+            <th>NR.Documento</th>
+            <th>Tipo Cliente</th>
+            <th>Classificação</th>
             <th style="width: 30px;">Detalhes</th>
         </tr>
         </thead>
@@ -32,6 +34,39 @@
             <td> {{cliente.id}}</td>
             <td> {{cliente.nome}}</td>
             <td>{{cliente.cpf}}</td>
+            <td>{{cliente.tipo_cliente}}</td>
+
+
+            <td ng-if="cliente.classificacao == 1">
+                <i class="fa fa-star fa-1x"></i>
+            </td>
+
+            <td ng-if="cliente.classificacao == 2">
+                <i class="fa fa-star fa-1x"></i>
+                <i class="fa fa-star fa-1x"></i>
+            </td>
+
+            <td ng-if="cliente.classificacao == 3">
+                <i class="fa fa-star fa-1x"></i>
+                <i class="fa fa-star fa-1x"></i>
+                <i class="fa fa-star fa-1x"></i>
+            </td>
+
+            <td ng-if="cliente.classificacao == 4">
+                <i class="fa fa-star fa-1x"></i>
+                <i class="fa fa-star fa-1x"></i>
+                <i class="fa fa-star fa-1x"></i>
+                <i class="fa fa-star fa-1x"></i>
+            </td>
+
+            <td ng-if="cliente.classificacao == 5">
+                <i class="fa fa-star fa-1x"></i>
+                <i class="fa fa-star fa-1x"></i>
+                <i class="fa fa-star fa-1x"></i>
+                <i class="fa fa-star fa-1x"></i>
+                <i class="fa fa-star fa-1x"></i>
+            </td>
+
             <td style="text-align: center"><a href="" ng-click="detailClients(cliente.id)"><i class="fa fa-edit"></i>
             </a></td>
         </tr>
@@ -63,7 +98,7 @@
                             </div>
                             <div class="col-lg-4">
                                 <div class="form-group">
-                                    <label style="font-size: 12px;">CPF</label>
+                                    <label style="font-size: 12px;">NR.Documento</label>
                                     <p>{{cpf}}</p>
                                 </div>
                             </div>
@@ -80,6 +115,26 @@
                                 <div class="form-group">
                                     <label style="font-size: 12px;">Cidade</label>
                                     <p>{{cidade}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top: 20px;">
+                            <div class="col-lg-6">
+                                <span style="font-weight: bold">Dados Cobrança</span>
+                                <hr style="margin: 0px; padding: 0px;"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <label style="font-size: 12px;">Enedereço</label>
+                                    <p>{{endereco_cob}}</p>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <label style="font-size: 12px;">Cidade</label>
+                                    <p>{{cidade_cob}}</p>
                                 </div>
                             </div>
                         </div>
