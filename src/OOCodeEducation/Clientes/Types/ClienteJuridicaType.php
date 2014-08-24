@@ -1,8 +1,10 @@
 <?php
 
-require_once('ClienteInterface.php');
+namespace OOCodeeducation\Clientes\Types;
 
-class ClienteJuridica extends ClienteFisica implements ClienteInterface {
+use OOCodeeducation\Clientes\ClienteGenerica;
+
+class ClienteJuridica extends ClienteGenerica {
 
     private $cnpj;
 
@@ -16,4 +18,5 @@ class ClienteJuridica extends ClienteFisica implements ClienteInterface {
     {
         return $this->cnpj;
     }
+
 }
